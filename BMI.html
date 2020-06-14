@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="normalize.css"> 
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <!-- Styling -->
+    <style>
+    .form{
+  font-family: Montserrat, sans-serif;
+  line-height: 3rem;
+  border: 5px solid #08314d;
+  border-radius: 5px;
+  padding: 90px;
+  padding-left: 20rem;
+  background-image: linear-gradient(to right, darkcyan , rgb(142, 142, 189) );  
+}
+
+
+
+.bmiheading{
+  font-family: Montserrat, sans-serif;
+  font-size: 50px;
+  padding-bottom: 50px;
+  color: rgb(35, 20, 77);
+  margin-left: 10rem;
+}
+
+select {
+  border: 1px solid grey;
+  border-radius: 4px;
+}
+
+input {
+  padding: 5px 10px;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
+.colors{
+  color: #ffffff;
+  border: 1px solid white;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.red{
+  background-color: #750000;
+}
+
+.green{
+  background-color: green;
+}
+
+.yellow{
+  background-color: hsl(60, 100%, 48%);
+}
+
+.orange{
+  background-color: orange;
+}
+
+button{
+  width: 20%; 
+    margin-left: auto;
+    margin-right: auto;
+    align-self: auto;
+    text-align: center;
+    background-color: rgb(22, 17, 68);
+    color: white;
+    padding: .6rem;
+    margin-top: 1rem;
+    margin-left: 15rem;
+    border: none;
+    border-radius: 3rem;
+}
+
+  .weight , .height {
+    display: block;
+    width: 60%;
+    margin-left: 10%;
+    margin-right: 20%;
+    border-radius: 2rem;
+    padding: .8rem;
+    border: none;
+    outline: none;
+  }
+
+  .text{
+    font-size: 20px;
+  }
+
+    </style>
+
+    <!-- Javascript -->
+  <script type="text/javascript">
+  
+    //bmi formula = kg/(m^2)
+
+function calculator(){
+  let weightValue = Number(document.bmi.weight.value);
+  
+  let heightValue = Number(document.bmi.height.value);
+  
+  let winput = Number(document.bmi.weight.value);
+  let hinput = Number(document.bmi.height.value)
+
+  let bmiValue = ( weightValue / (heightValue * heightValue)).toFixed(2);
+  let bmi = document.getElementById('bmi');
+  bmi.innerHTML = bmiValue;
+
+  
+  let condition = document.getElementById('condition');
+  let colors = ['red', 'green', 'yellow', 'orange']
+  if ( bmiValue < 18.5) {
+    condition.innerHTML = 'Underweight';
+    $('#condition').addClass('red');
+    for (i=1; i <= colors.length; i++){
+      $('#condition').removeClass(colors[i]);
+    }
+  } else if (  bmiValue < 25 ) {
+    condition.innerHTML = 'Healthy';
+    $('#condition').addClass('green');
+    $('#condition').removeClass(colors[0]);
+    $('#condition').removeClass(colors[2]);
+    $('#condition').removeClass(colors[3]);
+  } else if (  bmiValue < 30 ) {
+    condition.innerHTML = 'Overweight';
+    $('#condition').addClass('yellow');
+    $('#condition').removeClass(colors[0]);
+    $('#condition').removeClass(colors[1]);
+    $('#condition').removeClass(colors[3]);
+  } else if (  bmiValue < 40 ) {
+    condition.innerHTML = 'Obese';
+    $('#condition').addClass('orange');
+    for (i=0; i < colors.length-1; i++){
+      $('#condition').removeClass(colors[i]);
+    }
+  } else if ( bmiValue >= 40 ){
+    condition.innerHTML = 'Extremely Obese';
+    $('#condition').addClass('red');
+    for (i=1; i <= colors.length; i++){
+      $('#condition').removeClass(colors[i]);
+    }
+  }
+}
+</script>
+</head>
+<body>
+    <header class="header">
+        <div>
+          <ul class="header-contents">
+            <li><a href="Login.html">Login |</a></li>
+            <li><a href="Online PT.html">Register</a> </li>
+    </ul>
+        </div>
+       
+    </header>
+    <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <img class=logoimg src="images/logo.png">
+      <label class="logo"> Aesthetips</label>
+      <ul>
+        <li><a href="Home.html">Home</a></li>
+        <li><a class="active" href="fitness.html">Fitness</a></li>
+        <li><a href="nutrition.html">Nutrition</a></li>
+        <li><a href="Motivation.html">Motivation</a></li>
+        <li><a href="Contact Us.html">Contact Us</a></li>
+        <li><a href="Online PT.html">Online PT</a></li>
+    </ul>
+    </nav>
+    <!-- BMI CALCULATOR -->
+    <form name="bmi" class="form" action="BMI.html" method="post">
+      
+        <h1 class="bmiheading"><b>BMI  CALCULATOR</b></h1>
+        <div class="text">
+      Weight:<select id="wunit" name="wunit">
+        <option value="kg">In kg</option>
+        
+      </select>
+      <input id="weight" type="text" class="weight"name="weight" value="" placeholder="Enter your Weight :">
+      
+      <br/>
+      Height:<select id="hunit" name="hunit">
+        <option value="meter">In Metre</option>
+        
+      </select>
+      
+      <input id="height" type="text" name="height" class="height" value="" placeholder="Enter your Height:">
+      
+      <br/>
+      Your BMI: <span id="bmi"></span> <span id="condition" class="colors"></span>
+      <br/>
+      <button onclick="calculator()" type="button" name="button">Calculate</button>
+    </div>
+    
+    
+</body>    
+</html>

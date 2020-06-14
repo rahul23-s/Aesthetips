@@ -1,0 +1,282 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+a {
+  color: rgb(2, 6, 8);
+  text-decoration: none;
+}
+a:hover{
+  color: aliceblue;
+}
+body{
+    font-family: Montserrat, sans-serif;
+}
+/* header */
+
+.header {
+  background: #3B3939;
+  height: 30px;
+  width: 100%;
+  margin-top: 0%;
+  padding-top: 0%;
+}
+
+.header-contents{
+  color: azure;
+  float: right;
+  margin-right: 30px;
+  margin-top: 5px;
+}
+
+header div ul li{
+  display: inline-block;
+}
+
+header div ul li a{
+  color: white;
+}
+/* NavBar */
+
+nav{
+    background: darkslategray;
+    height: 80px;
+    width: 100%;
+    
+    
+}
+  .logoimg{
+      height: 70px;
+      margin-top: 10px;
+      margin-left: 20px;
+      border-radius: 100%;
+  }
+
+  label.logo{
+    color: white;
+    vertical-align: top;
+    font-size: 40px;
+    line-height: 80px;
+    padding: 0 20px;
+    font-weight: bold;
+  }
+  nav ul{
+    float: right;
+    margin-right: 20px;
+    
+  }
+  nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+    
+  }
+  nav ul li a{
+    color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+  }
+  a:link{
+      text-decoration: none;
+  }
+  a.active,a:hover{
+    background: #1b9bff;
+    transition: .5s;
+  }
+  .checkbtn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+  }
+  #check{
+    display: none;
+  }
+   @media screen and (max-width: 1290px){
+    nav{
+      height: 25vh;
+    }
+    label.logo{
+      font-size: 40px;
+      padding-left: 50px;
+    }
+    nav ul li a{
+      float: left;
+      padding: 15px;  
+      font-size: 16px;
+    }
+  }
+  @media screen and (max-width: 1000px){
+    nav{
+      height: 35vh;
+    }
+    .checkbtn{
+      display: none;
+    }
+    ul{  
+      position: fixed;
+      display: contents;
+      width: 100%;
+      height: 100vh;
+      background: #2c3e50;
+      top: 80px;
+      left: -100%;
+      text-align: center;
+      transition: all .5s;
+    }
+    nav ul li{
+      display: block;
+      margin: 50px 0;
+      line-height: 30px;
+    }
+    nav ul li a{
+      font-size: 20px;
+    }
+    a:hover,a.active{
+      background: none;
+      color: #0082e6;
+    }
+    #check:checked ~ ul{
+      left: 0;
+    }
+  }
+
+
+/* Utility Classes */
+
+.img-responsive{
+    max-width: 100%;
+    border-radius: 50%;   
+}
+.page_image{
+    background: url(images/Home-banner1.jpg) no-repeat;
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+}
+
+.page_wrapper{
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    
+}
+
+.page_wrapper h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4rem;
+    text-align: center;
+
+}
+.form_city{
+    text-align: center;
+}
+.form_city .city_name{
+    display: block;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2rem;
+    padding: .6rem;
+    border: none;
+    outline: none;
+
+}
+
+.form_city button{
+    width: 60%; 
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: darkcyan;
+    color: white;
+    padding: .6rem;
+    margin-top: 1rem;
+    border: none;
+    border-radius: .3rem;
+}
+
+.page_wrapper span{
+    margin-left: 3rem;
+    display: inline-block;
+    margin-bottom: .5rem;
+}
+
+/* Content Section */
+
+.contents{
+    width: 100%;
+    margin-top: 0.3rem;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.content{
+    float: left;
+    text-align: center;
+    width: 32.33%;
+    margin-left: .9rem;   
+}
+
+.content:first-of-type{
+    margin-left: 0;
+}
+
+@media screen and (max-width: 700px) {
+    .contents{
+        width: 100%;
+        float: left;
+    }
+}
+
+/* footer */
+.row{
+  display: inline-block;
+}
+.footer{
+  background: #3B3939;
+  height: 60px;
+  width: 100%;
+  margin-top: 0%;
+  padding-top: 0%;
+}
+
+footer div ul li.social-items{
+  display: inline-block;
+  float: right;
+  margin-right: 1rem;
+}
+footer div ul{
+  margin-right: 1rem;
+}
+  
+.instalogo{
+  float: right;
+  height: 30px;
+  margin-top: 10px;
+  margin-left: 20px;
+  border-radius: 100%;
+  
+}
+
+.facebooklogo{
+  float: right;
+  height: 30px;
+  margin-top: 10px;
+  margin-left: 20px;
+  border-radius: 100%;
+}
